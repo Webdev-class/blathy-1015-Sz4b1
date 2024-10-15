@@ -12,14 +12,38 @@ let customers = [
 ]
 
 function isAddress(address) {
-    //TODO
+        if (typeof(address["city"]==="string") && typeof(address["street"]==="string") && typeof(address["house"])==="number"){
+            return true;
+        }else{
+            return false;
+        }
 }
 
 function isCustomer(name, age, address, newsLetter) {
-    //TODO
+    let answer = false;
+        if(typeof(name)==="string"){
+            if(typeof(age)==="number"){
+                if(typeof(address)==="object"){
+                    if(typeof(newsLetter)==="boolean"){
+                        answer=true;
+                    }
+                }
+            }
+        }
+    return answer;
 }
 
 function addCustomer(name, age, address, newsLetter) {
-    //TODO
+    if(isAddress(address)==true){
+        if(isCustomer(name, age, address, newsLetter)===true){
+            let new_helper_array = [...customers];
+            new_helper_array.push({id: customers.length+1, name, age, address, newsLetter})
+            return new_helper_array;
+        }else{
+            return false;
+        }
+    }else{
+        return false;
+    }
 }
 module.exports = addCustomer;

@@ -11,14 +11,36 @@ let customers = [
     {id:10, name:"Jonas Tungate", age:83, address:{city:"Padangulaktanding", street:"224 Manley Drive", house:49}, newsLetter: true}
 ]
 function isAddress(address) {    
-    //TODO
+    if (typeof(address["city"]==="string") && typeof(address["street"]==="string") && typeof(address["house"])==="number"){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 function isCustomer(name, age, address, newsLetter) {    
-    //TODO
+    let answer = false;
+    if(typeof(name)==="string"){
+        if(typeof(age)==="number"){
+            if(typeof(address)==="object"){
+                if(typeof(newsLetter)==="boolean"){
+                    answer=true;
+                }
+            }
+        }
+    }
+    return answer;
 }
 function modifyCustomer (customer){
-    //TODO
+     let third_helper_array = customers
+     for (let index = 0; index < customers.length; index++) {
+         if(third_helper_array[index+1].id==customer.id){
+             third_helper_array[customer.id-1].name = customer.name
+             third_helper_array[customer.id-1].age = customer.age
+             third_helper_array[customer.id-1].address = customer.address
+             third_helper_array[customer.id-1].newsLetter = customer.newsLetter
+         }
+         return third_helper_array;
+     }
 }
-
 module.exports = modifyCustomer;

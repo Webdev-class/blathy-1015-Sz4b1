@@ -54,6 +54,6 @@ test('addCustomers test with bad input 1',() => {
 test('addCustomers test with bad input 2',() => {
     expect(addCustomer("Kiss Béla", 30, {city:"Budapest",street:"Arany János út",house:"11"}, true)).toEqual(false)
 })
-test('addCustomers test with bad input 2',() => {
+test('addCustomers test with bad input 3',() => {
     expect(addCustomer("Kiss Béla", 30, {city:"Budapest",street:"Arany János út",house:"11"})).toEqual(false)
 })

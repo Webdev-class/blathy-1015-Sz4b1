@@ -12,6 +12,12 @@ let customers = [
 ]
 
 function removeCustomer(id) {
-    //TODO
+    let second_helper_array = [...customers];
+    if(id>customers.length){
+        return false
+    }else{
+        second_helper_array.splice(id-1,1);
+        return second_helper_array;
+    }
 }
 module.exports = removeCustomer;
